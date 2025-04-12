@@ -1,0 +1,312 @@
+/* Базовые переменные (переопределяются в темах) */
+:root {
+    --primary: #6C5B7B;
+    --secondary: #C06C84;
+    --accent: #F8B195;
+    --light: #F9F5F0;
+    --dark: #355C7D;
+    --text: #2A363B;
+    --bg: #ffffff;
+    --card-bg: #ffffff;
+    --header-bg: rgba(255,255,255,0.9);
+    --footer-bg: linear-gradient(to right, #5D4037, #8D6E63);
+  }
+  
+  /* Общие стили */
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  /* Полигональный фон */
+  .polygon-bg {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+  }
+  
+  .polygon-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--light) 0%, #f5f5f5 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    z-index: -1;
+  }
+  
+  /* Шапка */
+  .polygon-header {
+    padding: 1.5rem 0;
+    background-color: var(--header-bg);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Навигация */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  
+  /* Кнопки */
+  .polygon-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .polygon-btn:hover {
+    background-color: var(--dark);
+    transform: translateY(-2px);
+  }
+  
+  /* Основное содержимое */
+  .polygon-main {
+    padding: 2rem 0;
+    min-height: 60vh;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Карточки */
+  .polygon-card, .stat-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  /* Формы */
+  .polygon-form input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #eee;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+  
+  .polygon-form input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  
+  /* Подвал */
+  .polygon-footer {
+    background: var(--footer-bg);
+    color: white;
+    padding: 3rem 0 1.5rem;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+    position: relative;
+  }
+
+  /* Основная структура страницы */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.polygon-bg {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Стили для подвала */
+.polygon-footer {
+    background: var(--footer-bg);
+    color: white;
+    padding: 3rem 0 1.5rem;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+    margin-top: auto; /* Важно - прижимает подвал к низу */
+    position: relative;
+}
+
+/* Убираем возможные отступы */
+.polygon-main {
+    padding-bottom: 0;
+}
+
+/* Для мобильной версии */
+@media (max-width: 768px) {
+    .polygon-footer {
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        padding: 2rem 0 1rem;
+    }
+}
+  
+  /* Полигональные фигуры */
+  .polygon-shapes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .polygon-shape {
+    position: absolute;
+    opacity: 0.15;
+    transition: transform 0.5s ease;
+  }
+  
+  /* Разные формы полигонов */
+  .polygon-shape-1 {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  .polygon-shape-2 {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  }
+  .polygon-shape-3 {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+  
+  /* Переключатель тем */
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .polygon-shape {
+      display: none;
+    }
+    
+    nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+
+/* Новые стили для шапки */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-right: 1rem;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg) scale(1.1);
+    background-color: var(--primary);
+}
+
+
+/* Удаление полигональных форм у полей ввода */
+.polygon-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.polygon-form input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #eee;
+    font-size: 1rem;
+    transition: all 0.3s;
+    border-radius: 5px; /* Добавляем скруглённые углы*/
+}
+
+.polygon-form input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* Адаптивность для шапки */
+@media (max-width: 768px) {
+    .header-controls {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .theme-toggle {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .auth-section {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* Гарантируем, что подвал всегда внизу */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.polygon-bg {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Увеличиваем отступы в подвале */
+.polygon-footer {
+    padding: 4rem 0 2rem;
+}
+
+/* Убираем лишние отступы у контейнера */
+.container {
+    padding-bottom: 0;
+}

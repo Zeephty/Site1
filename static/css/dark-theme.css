@@ -1,0 +1,33 @@
+:root {
+    --primary: #8E44AD;
+    --secondary: #3498DB;
+    --accent: #E74C3C;
+    --light: #2C3E50;
+    --dark: #1A1A1A;
+    --text: #ECF0F1;
+    --bg: #2C3E50;
+    --card-bg: #34495E;
+    --header-bg: rgba(44, 62, 80, 0.9);
+    --footer-bg: linear-gradient(to right, #1A1A1A, #2C3E50);
+  }
+  
+  /* Специфичные стили для тёмной темы */
+  body {
+    color: var(--text);
+    background-color: var(--bg);
+  }
+  
+  .polygon-alert {
+    background-color: rgba(0,0,0,0.2);
+    border-left: 5px solid var(--accent);
+  }
+  
+  .polygon-form input {
+    background-color: var(--dark);
+    color: var(--text);
+    border-color: var(--light);
+  }
+  
+  .polygon-card, .stat-card {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }

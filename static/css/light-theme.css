@@ -1,0 +1,23 @@
+:root {
+    --primary: #6C5B7B;
+    --secondary: #C06C84;
+    --accent: #F8B195;
+    --light: #F9F5F0;
+    --dark: #355C7D;
+    --text: #2A363B;
+    --bg: #ffffff;
+    --card-bg: #ffffff;
+    --header-bg: rgba(255,255,255,0.9);
+    --footer-bg: linear-gradient(to right, #5D4037, #8D6E63);
+  }
+  
+  /* Специфичные стили для светлой темы */
+  .polygon-alert {
+    background-color: rgba(255,255,255,0.9);
+    border-left: 5px solid var(--primary);
+  }
+  
+  .polygon-form input {
+    background-color: #f9f9f9;
+    color: var(--text);
+  }

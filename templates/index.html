@@ -1,7 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<section class="polygon-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Ваше семейное древо</h1>
+            <p>Создайте цифровую историю вашей семьи</p>
+        </div>
+    </div>
+</section>
 
-<h4>{{ slogan }}</h4>
-
+<section class="polygon-stats">
+    <div class="container">
+        <div class="stat-card">
+            <div class="stat-content">
+                <h3>Всего членов семьи</h3>
+                <div class="stat-number">{{ user_count }}</div>
+            </div>
+            <div class="polygon-shape-small"></div>
+        </div>
+    </div>
+</section>
 {% endblock %}
